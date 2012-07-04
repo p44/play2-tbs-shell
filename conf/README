@@ -1,0 +1,8 @@
+On configurations
+
+sbt> stage
+
+#  will create a start script (as will dist).  Then you can run with a config override setting
+#  such as
+
+target/start -Dconfig.resource=stage.conf
