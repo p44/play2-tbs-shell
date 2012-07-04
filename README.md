@@ -2,7 +2,7 @@
 
 **Play2-tbs-shell** is a very simple play 2.0.2 shell app with [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 
-**Play2-tbs-shell** I use as a starter play/scala app
+**Play2-tbs-shell**, I use it as a starter play/scala app
 
 
 ## More Information
