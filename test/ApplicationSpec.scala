@@ -29,5 +29,26 @@ class ApplicationSpec extends Specification {
         contentAsString(home) must contain ("Ready for scala coding!")
       }
     }
+    
+    "render the configdisplay page" in {
+      running(FakeApplication()) {
+        val home = routeAndCall(FakeRequest(GET, "/configdisplay")).get
+        
+        status(home) must equalTo(OK)
+        contentType(home) must beSome.which(_ == "text/html")
+        contentAsString(home) must contain ("my.environment")
+      }
+    }
+    
+    "render the configdisplay page" in {
+      running(FakeApplication()) {
+        val home = routeAndCall(FakeRequest(GET, "/homeforms")).get
+        
+        status(home) must equalTo(OK)
+        contentType(home) must beSome.which(_ == "text/html")
+        contentAsString(home) must contain ("helper.twitterBootstrap")
+      }
+    }
+    
   }
 }

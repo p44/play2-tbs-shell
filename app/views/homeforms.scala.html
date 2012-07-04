@@ -1,0 +1,37 @@
+@(message: String, mForm: Form[controllers.Home])
+
+@import helper.twitterBootstrap._
+
+@main(1) {
+        
+@homeheader("default")
+
+@* new 12 span grid *@
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class ="span6">
+    
+    <br/><h3>Home Forms</h3><br/>
+    <p>@if(message.length > 0) { <code>@message</code> } </p>
+    
+    </div>
+    <div class ="span6">
+    
+    @helper.form(action = routes.Application.homepost, 'method -> "post", 'class -> "form-horizontal") {
+        
+        <fieldset>
+            @helper.inputText(mForm("myval"), '_label -> "My Value")
+        </fieldset>
+        
+        <br/>
+        <div class="actions">
+            <input type="submit" value="Submit" class="btn btn-inverse">
+        </div>
+        
+        }
+    
+    </div>
+
+@* this 12 span grid is closed out in main *@    
+}

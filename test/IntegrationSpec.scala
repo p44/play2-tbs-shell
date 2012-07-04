@@ -33,6 +33,16 @@ class IntegrationSpec extends Specification {
       }
     }
     
+    "work from within a browser" in {
+      running(TestServer(3333), HTMLUNIT) { browser =>
+
+        browser.goTo("http://localhost:3333/homeforms")
+
+        browser.pageSource must contain("helper.twitterBootstrap")
+       
+      }
+    }
+    
   }
   
 }
