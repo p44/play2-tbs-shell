@@ -13,7 +13,7 @@ class IntegrationSpec extends Specification {
   
   "Application" should {
     
-    "work from within a browser" in {
+    "work from within a browser index" in {
       running(TestServer(3333), HTMLUNIT) { browser =>
 
         browser.goTo("http://localhost:3333/")
@@ -23,7 +23,7 @@ class IntegrationSpec extends Specification {
       }
     }
     
-    "work from within a browser" in {
+    "work from within a browser configdisplay " in {
       running(TestServer(3333), HTMLUNIT) { browser =>
 
         browser.goTo("http://localhost:3333/configdisplay")
@@ -33,12 +33,22 @@ class IntegrationSpec extends Specification {
       }
     }
     
-    "work from within a browser" in {
+    "work from within a browser homeforms" in {
       running(TestServer(3333), HTMLUNIT) { browser =>
 
         browser.goTo("http://localhost:3333/homeforms")
 
         browser.pageSource must contain("helper.twitterBootstrap")
+       
+      }
+    }
+    
+    "work from within a browser homeajax" in {
+      running(TestServer(3333), HTMLUNIT) { browser =>
+
+        browser.goTo("http://localhost:3333/homeajax")
+
+        browser.pageSource must contain("Ajax")
        
       }
     }

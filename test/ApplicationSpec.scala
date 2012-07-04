@@ -40,13 +40,23 @@ class ApplicationSpec extends Specification {
       }
     }
     
-    "render the configdisplay page" in {
+    "render the homeforms page" in {
       running(FakeApplication()) {
         val home = routeAndCall(FakeRequest(GET, "/homeforms")).get
         
         status(home) must equalTo(OK)
         contentType(home) must beSome.which(_ == "text/html")
         contentAsString(home) must contain ("helper.twitterBootstrap")
+      }
+    }
+    
+    "render the homeajax page" in {
+      running(FakeApplication()) {
+        val home = routeAndCall(FakeRequest(GET, "/homeajax")).get
+        
+        status(home) must equalTo(OK)
+        contentType(home) must beSome.which(_ == "text/html")
+        contentAsString(home) must contain ("Ajax")
       }
     }
     
