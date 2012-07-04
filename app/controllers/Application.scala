@@ -20,6 +20,10 @@ object Application extends Controller {
     Ok(views.html.configdisplay("Settings --> ", listConfig))
   }
   
+  def homeajax = Action {
+    Ok(views.html.homeajax("Scrubbing cleaner applied"))
+  }
+  
   val homeForm = Form(
     mapping(
       "myval" -> nonEmptyText.verifying(maxLength(50))
@@ -42,6 +46,7 @@ object Application extends Controller {
     )
   }
 
+  /** list config settings */
   def listConfig: List[String] = {
     val conf = ConfigFactory.load
     val r = List[String](
