@@ -1,0 +1,42 @@
+@(flavor: String = "default")
+
+@flavor match {
+
+  case "default" => {
+
+    <div class="span12">
+      
+      <div>
+        <h2>Home</h2>
+        <p>Some Example <strong>Stuff</strong></p>
+        <p>
+          <a href="@routes.Application.configdisplay"><button class="btn btn-inverse" >1</button></a> 
+          <a href="@routes.Application.index"><button class="btn btn-info" >2</button></a>
+          <a href="@routes.Application.index"><button class="btn btn" >3</button></a>
+        </p>
+      </div>
+    
+    </div>
+    
+  </div> @* row from main closed here *@
+</div> @* container from main closed here *@
+
+  }
+  
+  case _ => {
+  
+    <div class="span12">
+      
+      <div>
+        <h2>???</h2>
+        <p>This app has a navigation issue</p>
+      </div>
+    
+    </div>
+    
+  </div> @* row closed from main *@
+</div> @* container closed from main *@
+  
+  }
+  
+}

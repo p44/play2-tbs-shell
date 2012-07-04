@@ -1,0 +1,29 @@
+@(message: String, myconfig: List[String])
+
+@main(1) {
+        
+@homeheader("default")
+
+@* new 12 span grid *@
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class ="span6">
+    
+    <br/><h3>Config Display</h3><br/>
+    <p>@if(message.length > 0) { <code>@message</code> } </p>
+    
+    </div>
+    <div class ="span6">
+    @if(myconfig.size > 0) {
+    
+    <br/><h4>Configuration</h4><br/>
+    <ul/>
+      @for(x <- myconfig) { <li>@x</li> }
+    <ul/>
+    }
+    
+    </div>
+
+@* this 12 span grid is closed out in main *@    
+}
